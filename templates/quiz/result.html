@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}ようこそ{% endblock %}
+{% load static %}{% block css %}<link href="{% static 'css/result.css' %}" rel="stylesheet">{% endblock %}
+{% block content %}
+<div class="top">
+    <div class="result-container">
+        <div class="result">
+            <h3>\結果発表/</h3>
+            <h4>&emsp;&emsp;&emsp;&emsp;蛙化度:<span class="char-1">&emsp;&emsp;{{percent}}</span>%</h4>
+            <h4>解いた問題の数: &emsp;&emsp;{{answered_num}}</h4>
+            <h4>各問題の蛙化度:&emsp;①〜％、②〜％、③〜％、④〜％</h4>
+        </div>
+        <div class="quiz-container">
+            <h3>\解説/</h3>
+            <div class="quiz-item">
+                <div class="quiz-header">
+                    <span class="question-number">１問目</span>
+                    <button class="quiz-toggle-button">解説を表示 ⬇️</button>
+                </div>
+                <div class="quiz-content">
+                    <p><span>Great</span>:クイズの解説文1がここに表示されます。</p>
+                    <p><span>Good</span>:クイズの解説文1がここに表示されます。</p>
+                    <p><span>Frog</span>:クイズの解説文1がここに表示されます。</p>
+                    <p><spna>Superfrog</spna>:クイズの解説文1がここに表示されます。</p>
+                    <div class="explain">
+                        <p><spna>全体の解説</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="quiz-item">
+                <div class="quiz-header">
+                    <span class="question-number">２問目</span>
+                    <button class="quiz-toggle-button">解説を表示 ⬇️</button>
+                </div>
+                <div class="quiz-content">
+                    <p><span>Great</span>:クイズの解説文1がここに表示されます。</p>
+                    <p><span>Good</span>:クイズの解説文1がここに表示されます。</p>
+                    <p><span>Frog</span>:クイズの解説文1がここに表示されます。</p>
+                    <p><spna>Superfrog</spna>:クイズの解説文1がここに表示されます。</p>
+                    <div class="explain">
+                        <p><spna>全体の解説</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="quiz-item">
+                <div class="quiz-header">
+                    <span class="question-number">３問目</span>
+                    <button class="quiz-toggle-button">解説を表示 ⬇️</button>
+                </div>
+                <div class="quiz-content">
+                    <p><span>Great</span>:クイズの解説文1がここに表示されます。</p>
+                    <p><span>Good</span>:クイズの解説文1がここに表示されます。</p>
+                    <p><span>Frog</span>:クイズの解説文1がここに表示されます。</p>
+                    <p><spna>Superfrog</spna>:クイズの解説文1がここに表示されます。</p>
+                    <div class="explain">
+                        <p><spna>全体の解説</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-item">
+                <div class="quiz-header">
+                    <span class="question-number">４問目</span>
+                    <button class="quiz-toggle-button">解説を表示 ⬇️</button>
+                </div>
+                <div class="quiz-content">
+                    <p><span>Great</span>:クイズの解説文1がここに表示されます。</p>
+                    <p><span>Good</span>:クイズの解説文1がここに表示されます。</p>
+                    <p><span>Frog</span>:クイズの解説文1がここに表示されます。</p>
+                    <p><spna>Superfrog</spna>:クイズの解説文1がここに表示されます。</p>
+                    <div class="explain">
+                        <p><spna>全体の解説</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <a href="{% url 'welcome:welcome'%}" style="text-decoration: none;">ホーム画面に戻る</a>
+        </div>
+    </div>
+</div>
+{% block script %}
+  <script src="result.js"></script>
+  {% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+    {% block css %}<link href="{% static 'css/signup.css' %}" rel="stylesheet">{% endblock %}
+    {% block title %}サインアップ{% endblock %}
+{% block content %}
+    <div class="top-wrapper">
+      <div class="top-container">
+        <div class="top-text"><img class="logo-login" src="{% static 'images/KKFrog.png' %}"></div>
+        <div class="top-text"><h2>新規登録</h2></div>
+          <form method="post" action="{% url 'accounts:signup' %}" class="top-address">
+            {{ form.as_p }} 
+            {% csrf_token %}
+            <button type="submit" class="login-btn">ユーザー登録</button>
+          </form>
+          <div class="no-account">
+            <label>アカウントを持っている</label>
+            <a href="{% url 'accounts:login' %}">ログイン</a>
+          </div>
+      </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script 
+        src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
+{% endblock %}

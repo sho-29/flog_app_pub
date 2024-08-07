@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%}{% endblock %}</title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    {% block css %}{% endblock %}
+</head>
+<body>
+  <header id="title">
+    <div class="header-inner">
+        <div class="header-left">
+            <img class="logo" src="{% static 'images/KKFrog.png' %}">
+        </div>
+        <div class="header-right">
+            <a href="{% url 'welcome:welcome'%}" style="text-decoration: none;">ホーム</a>
+            {% if user.is_authenticated %}<!--ログイン状態-->
+            <a href="{% url 'accounts:user_profile' user.username %}" style="text-decoration: none;">ユーザーページ</a>
+            <!--<a href="#" style="text-decoration: none;">投稿</a>-->
+            <a href="{% url 'accounts:logout' %}" style="text-decoration: none;">ログアウト</a>
+            {% else %}
+            <a href="{% url 'accounts:login'%}" style="text-decoration: none;">ログイン</a>
+            {% endif %}
+        </div>
+    </div>
+  </header>
+  {% block content %}{% endblock %}
+  <footer>
+    <div class="footer-wrapper">
+      <!--<ul class="footer-contents">
+        <li>
+            <a href="!" style="text-decoration: none;">トップ</a>
+        </li>
+        <li>
+            <a href="!" style="text-decoration: none;">ヘルプ</a>
+        </li>
+        <li>
+            <a href="!" style="text-decoration: none;">運営</a>
+        </li>
+        <li>
+            <a href="!" style="text-decoration: none;">利用規約</a>
+        </li>
+        <li>
+            <a href="!" style="text-decoration: none;">プライバシーポリシー</a>
+        </li>
+      </ul>-->
+      <p>Copyright（C）Kenkashi Hakkason</p>
+    </div>
+  </footer>
+  {% block script %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}ようこそ{% endblock %}
+{% load static %}{% block css %}<link href="{% static 'css/welcome.css' %}" rel="stylesheet">{% endblock %}
+{% block content %}
+<div class="top-wrapper">
+    <div class="container">
+        <div class="top-contents">
+          <img class="main-photo" src="{% static 'images/kaeruhome.png' %}">
+          <img class="divide-photo" src="{% static 'images/区切り線１.png' %}">
+          <div class="top-text">
+            <h1>「カエル化回避！！」とは</h1>
+            <p>「カエル化回避！！」は、あなたの「カエル化度」を計測できる診断サイトです。
+                <br><span class="char-1">ルールは簡単！！！</span>
+                <br>あるお題に対して、あなたが一番カエル化されないと思う解答を選ぶだけ！
+                <br>それだけであなたの「カエル化度」(あなたの蛙化されてしまうかもしれない度合い)を計測できちゃいます。
+                <br>すべてのシナリオで「カエル化度」０％になった時には、デートマスターになっているかも？！
+                <br><span class="char-2">楽しみながら、たまにタメになる。</span>
+                <br>そんな「カエル化回避！！」をぜひお楽しみください！！！
+            </p>
+          </div>
+          <div class="top-alert">
+            <h2>⚠注意⚠</h2>
+            <p>「蛙化現象」とは本来「好意を抱いている相手が自分に好意を持っていることが明らかになると、その相手に対して嫌悪感を持つようになる現象」を指します。
+              <br>しかし、このゲームで使われている「蛙化」は本来の意味とは異なり、
+              <br>「恋愛感情や好意を抱いている相手のささいな言動が気になり、気持ちが急速に冷めてしまう」という意味で使用しております。
+              <br>ご了承ください。多めにみてください。
+              <br>また、ここでの回答が必ずしも正解とは限りませんので、ご留意ください。
+              <br>P.S.　「蛙化現象」の対義語は「蛇化現象」と言うらしいです、初耳。
+            </p>
+          </div>
+          <img class="divide-photo" src="{% static 'images/区切り線１.png' %}">
+          <div class="determine">
+            <div class="determine-container">
+              <div class="determine-contents">
+                <div class="determine-message">
+                  <h1>＜さっそくゲームプレイ！＞</h1>
+                </div>    
+                {% if user.is_authenticated %}
+                <div class="card-container">
+                  <div class="card-contents">
+                    <div class="card">
+                      <a href="{% url 'quiz:question_invite' %}" style="text-decoration: none;">デートの誘い方編</a>
+                      <p>気になる子ができたから
+                        <br>デートに誘いたい！
+                        <br>でも、誘い方がわからない！
+                        <br>そんな人にきっと参考になる内容
+                      </p>
+                      <img class="card-photo1" src="{% static 'images/Level0.png' %}">
+                    </div>
+                    <div class="card">
+                      <a href="{% url 'quiz:question_date' %}" style="text-decoration: none;">デート中編</a>
+                      <p>デート中には何を気にすれば良いのでしょうか？</p>
+                      <img class="card-photo" src="{% static 'images/Level1.png' %}">
+                    </div>
+                    <div class="card">
+                      <a href="{% url 'quiz:question_confession' %}" style="text-decoration: none;">告白編</a>
+                      <p>告白のタイミングは？</p>
+                      <img class="card-photo" src="{% static 'images/Level2.png' %}">
+                    </div>
+                    <div class="card">
+                      <h3>Coming Soon ･･･</h3>
+                    </div>
+                  </div>
+                  <div class="Arrow left">＜</div>
+                  <div class="Arrow right">＞</div>
+                </div>
+                {% else %}
+                <div class="determine-button">
+                  <a href="{% url 'accounts:login' %}" class="button">Login</a>
+                </div>
+                {% endif %}
+                
+              </div>
+            </div>
+          </div>
+          <img class="divide-photo" src="{% static 'images/区切り線１.png' %}">
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+  <script src="{% static 'javascripts/jquery.min.js' %}"></script>
+  <script src="{% static 'javascripts/welcome.js' %}"></script>
+  <script src="{% static 'javascripts/home.js' %}"></script>
+{% endblock %}

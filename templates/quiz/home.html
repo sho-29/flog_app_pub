@@ -1,0 +1,6 @@
+{% extends 'quiz/base.html' %}
+{% block content %}
+homeです
+<li><a href="{% url 'quiz:question' %}">問題</a></li>
+<li><a href="{% url 'accounts:user_profile' %}">ユーザーページ</a></li>
+{% endblock %}

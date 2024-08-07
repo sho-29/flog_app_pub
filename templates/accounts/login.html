@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}<link href="{% static 'css/login.css' %}" rel="stylesheet">{% endblock %}
+{% block title %}ログイン{% endblock %}
+{% block content %}
+    <div class="top-wrapper">
+      <div class="top-container">
+        <img class="logo-login" src="{% static 'images/KKFrog.png' %}">
+        <div class="top-text"><h2>ログイン</h2></div>
+          <form method="post" class="top-address">
+              {{ form.as_p }}
+            <!--formにはSignupFormのインスタンスが入っている。as_pとすることで、各input要素(クラス内に定義した要素)がpタグで囲まれた状態で表示される。-->
+            <!--<p>{{ form.username.label }} {{ form.username }}</p>
+            <p>{{ form.password.label }} {{ form.password }}</p>-->
+            {% csrf_token %}
+            <button type="submit" class="login-btn">ログイン</button>
+          </form>
+          <div class="no-account">
+            <label>アカウントを持っていない</label>
+            <a href="{% url 'accounts:signup' %}">新規登録</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    {% block script %}
+    <script 
+        src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
+    {% endblock %}

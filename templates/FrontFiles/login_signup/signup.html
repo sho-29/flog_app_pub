@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+    {% block css %}<link href="{% static 'css/signup.css' %}" rel="stylesheet">{% endblock %}
+    {% block title %}サインアップ{% endblock %}
+{% block content %}
+    <div class="top-wrapper">
+      <div class="top-container">
+        <div class="top-text"><img class="logo-login" src="{% static 'images/KKFrog.png' %}"></div>
+        <div class="top-username">
+            <div class="text">ユーザーネーム</div>
+            <input type="text" name="username" placeholder="ユーザーネームを入力">
+        </div>
+        <div class="top-address">
+            <div class="text">メールアドレス</div>
+            <input type="text" name="address" placeholder="メールアドレスを入力">
+        </div>
+        <div class="top-password">
+            <div class="text">パスワード</div>
+            <input type="password" name="password" placeholder="パスワードを入力">
+        </div>
+        <a href="" class="login-btn">新規登録する</a>
+        <div class="no-account">
+          <label>アカウントを持っている方はこちら</label>
+          <a href="{% url 'accounts:login'%}">ログイン</a>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script 
+        src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
+{% endblock %}

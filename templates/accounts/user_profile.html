@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+    {% block css %}<link href="{% static 'css/userprofile.css' %}" rel="stylesheet" >{% endblock %}
+    {% block title %}ユーザー情報{% endblock %}
+{% block content %}
+    <div class="userinfo">
+        <div class="container">
+            <div class="user">
+                <h3>ユーザー情報</h3>
+                {{username}}
+                <div class="change">
+                    <a href="{% url 'accounts:edit' user.username %}" style="text-decoration: none;" class="login-btn">登録情報の変更</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="scoreinfo">
+                <div class="rireki">
+                    <h3>スコア情報</h3>
+                    <div class="min-container">
+                        <label class="label">ハイスコア</label>
+                        <div class="smallbox">
+                            {%if min_rate_invite == 1 %}
+                            <span class="text">デートの誘い方編</span><span class="value">0%</span>
+                            {% else %}
+                            <span class="text">デートの誘い方編</span><span class="value">{{min_rate_invite}}%</span>
+                            {% endif %}
+                        </div>
+                        <div class="smallbox">
+                            {%if min_rate_date == 1 %}
+                            <span class="text">デートの誘い方編</span><span class="value">0%</span>
+                            {% else %}
+                            <span class="text">デート中編</span><span class="value">{{min_rate_date}}%</span>
+                            {% endif %}
+                        </div>
+                        <div class="smallbox">
+                            {%if min_rate_confession == 1 %}
+                            <span class="text">デートの誘い方編</span><span class="value">0%</span>
+                            {% else %}
+                            <span class="text">告白前のデート編</span><span class="value">{{min_rate_confession}}%</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="max-container">
+                        <label class="label">ロースコア</label>
+                        <div class="smallbox">
+                            <span class="text">デートの誘い方編</span><span class="value">{{max_rate_invite}}%</span>
+                        </div>
+                        <div class="smallbox">
+                            <span class="text">デート中編</span><span class="value">{{max_rate_date}}%</span>
+                        </div>
+                        <div class="smallbox">
+                            <span class="text">告白前のデート編</span><span class="value">{{max_rate_confession}}%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script 
+        src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
+{% endblock %}

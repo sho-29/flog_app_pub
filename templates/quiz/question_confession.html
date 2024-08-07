@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Quiz{% endblock %}
+{% block css %}<link href="{% static 'css/quiz.css' %}" rel="stylesheet">{% endblock %}
+{% block content %}
+<form action="{% url 'quiz:result_confession' %}" method='post' >
+<div class="top-wrapper">
+  <div class="container" id="quiz-cotainer">
+    {% csrf_token %}
+    {% for q in questions %}
+    <div class="quiz" id="quiz-{{ forloop.counter }}" style="display: {% if forloop.first %} block {% else %}none{% endif %};">
+      <div class="question-scenario">
+        <h2>告白編</h2>
+      </div>
+      <div class="illustration" >
+        {% with image_counter=forloop.counter|stringformat:"d" %}
+        <img src="{% static 'images/q-confession-'|add:image_counter %}.png">
+        {% endwith %}
+      </div>
+      <div class="question">
+        <h2>{{q.question}}</h2>
+      </div>
+      <div class="quiz-wrapper">
+        <div class="box">
+            <input type="radio" name="{{q.question}}" value="{{q.op1}}" id="option-{{ forloop.counter }}-1">
+            <input type="radio" name="{{q.question}}" value="{{q.op2}}" id="option-{{ forloop.counter }}-2">
+            <input type="radio" name="{{q.question}}" value="{{q.op3}}" id="option-{{ forloop.counter }}-3">
+            <input type="radio" name="{{q.question}}" value="{{q.op4}}" id="option-{{ forloop.counter }}-4">
+            <label for="option-{{ forloop.counter }}-1" class="option-1 option-label">
+                <div class="dot"></div>
+                <div class="text">{{q.op1}}</div>
+            </label>
+            <label for="option-{{ forloop.counter }}-2" class="option-2 option-label">
+                <div class="dot"></div>
+                <div class="text">{{q.op2}}</div>
+            </label>
+            <label for="option-{{ forloop.counter }}-3" class="option-3 option-label">
+                <div class="dot"></div>
+                <div class="text">{{q.op3}}</div>
+            </label>
+            <label for="option-{{ forloop.counter }}-4" class="option-4 option-label">
+                <div class="dot"></div>
+                <div class="text">{{q.op4}}</div>
+            </label>
+        </div>
+      </div>
+      <div class="cq-btn-first">
+        <button type="button" class="before-btn cq-btn" onclick="showBeforeQuiz({{ forloop.counter }}, {{ forloop.length }})"
+                style="display: {% if forloop.first %} none {% else %}block{% endif %};">前の問題へ</button>
+        <button type="button" class="next-btn cq-btn" onclick="showNextQuiz({{ forloop.counter }}, {{ forloop.length }})"
+                style="display: {% if forloop.last %} none {% else %} block {% endif %};">次の問題へ</button>
+      </div>
+      <div class="cq-btn-last">
+        
+      </div>
+      <button type="submit" class="btn btn-primary submit-btn" style="display: {% if forloop.last %} block {% else %} none {% endif %};">蛙化度計測&解説へ</button>
+    </div>
+    {% endfor %}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+{% block script %}
+  <script src="{% static 'javascripts/jquery.min.js' %}"></script>
+  <script src="{% static 'javascripts/quiz.js' %}"></script>
+{% endblock %}

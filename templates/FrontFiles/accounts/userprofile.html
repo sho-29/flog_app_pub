@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+    {% block css %}<link href="userprofile.css" rel="stylesheet" >{% endblock %}
+    {% block title %}ユーザー情報{% endblock %}
+{% block content %}
+    <div class="userinfo">
+        <div class="container">
+            <div class="user">
+                <h3>ユーザー情報</h3>
+                ユーザーネーム : ここにデータベースのやつ
+                <div class="change">
+                    <a href="#" style="text-decoration: none;" class="login-btn">登録情報の変更</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="scoreinfo">
+                <div class="rireki">
+                    <h3>スコア情報</h3>
+                    <h4>挑戦回数</h4>
+                    ～編 : ここにデータベースのやつ<br>
+                    ～編 : ここにデータベースのやつ<br>
+                    ～編 : ここにデータベースのやつ<br>
+                    ～編 : ここにデータベースのやつ<br>
+                    <h4>最高記録</h4>
+                    ～編 : ここにデータベースのやつ<br>
+                    ～編 : ここにデータベースのやつ<br>
+                    ～編 : ここにデータベースのやつ<br>
+                    ～編 : ここにデータベースのやつ<br>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

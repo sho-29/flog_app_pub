@@ -1,0 +1,103 @@
+{% extends "base.html"}
+{% load static %}
+{% block css %}<link href="{% static 'css/home.css' %}" rel="stylesheet" >{% endblock %}
+{% block title %}ホーム{% endblock %}
+{% block content %}
+  <div class="top-wrapper">
+    <div class="container">
+        <div class="top-contents">
+          <img class="main-photo" src="{% static 'images/kaeruhome.png' %}">
+          <img class="divide-photo" src="{% static 'images/区切り線１.png' %}">
+          <div class="top-text">
+            <h1>「カエル化回避！！」とは</h1>
+            <p>昨今「蛙化現象」というにワードが話題になりました。
+                <br>ネットの情報だけを頼りに「カエル化されたらどうしよう」と悩んで何もできないのはもったいない。
+                <br>「デートなんてこんなもんか」と感じてもらいたい。
+                <br>これもネットの位置情報に過ぎないかもしれないですが、
+                <br>あなたの大事な一歩になることを後押しできれば幸いです。
+            </p>
+          </div>
+          <div class="top-alert">
+            <h2>⚠注意⚠</h2>
+            <p>このゲームで使われている「蛙化」は本来の意味とは異なるものとなっています。
+                <br>多めにみてください
+            </p>
+          </div>
+          <img class="divide-photo" src="{% static 'images/区切り線１.png' %}">
+          <div class="top-scenario">
+            <div class="top-message">
+              <h1>＜シナリオを選択してください＞</h1>
+            </div>
+            <div class="card-container">
+              <div class="card-contents">
+                <div class="card">
+                  <a href="quiz.html" style="text-decoration: none;">デートの誘い方編</a>
+                  <p>気になる子ができたからデートに誘いたい！
+                    <br>でも、誘い方がわからない！
+                    <br>そんな人にきっと参考になる内容
+                  </p>
+                </div>
+                <div class="card">
+                  <h3>Card Title 2</h3>
+                  <p>Card description...</p>
+                </div>
+                <div class="card">
+                  <h3>Card Title 3</h3>
+                  <p>Card description...</p>
+                </div>
+                <div class="card">
+                  <h3>Card Title 4</h3>
+                  <p>Card description...</p>
+                </div>
+                <div class="card">
+                  <h3>Card Title 5</h3>
+                  <p>Card description...</p>
+                </div>
+                <div class="card">
+                  <h3>Card Title 6</h3>
+                  <p>Card description...</p>
+                </div>
+                <div class="card">
+                  <h3>Card Title 7</h3>
+                  <p>Card description...</p>
+                </div>
+                <div class="card">
+                  <h3>Card Title 8</h3>
+                  <p>Card description...</p>
+                </div>
+              </div>
+              <div class="Arrow left">＜</div>
+              <div class="Arrow right">＞</div>
+            </div>
+          </div>
+          <img class="divide-photo" src="{% static 'images/区切り線１.png' %}">
+          <div class="post">
+            <div class="post-container">
+              <div class="post-contents">
+                <div class="post-message">
+                  <h1>＜あなたの蛙化体験を共有しましょう＞</h1>
+                </div>
+                <div class="post-button">
+                  <a href="?" class="button" style="text-decoration: none;">投稿一覧を見る</a>
+                  <a href="?" class="button" style="text-decoration: none;">投稿してみる</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="divide-photo" src="{% static 'images/区切り線１.png' %}">
+
+
+
+
+        </div>
+    </div>
+  </div>
+  {% endblock %}
+  {% block script %}
+  <script 
+    src="https://code.jquery.com/jquery-3.7.1.js" 
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+    crossorigin="anonymous">
+  </script>
+  <script src="home.js"></script>
+  {% endblock %}

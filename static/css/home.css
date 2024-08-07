@@ -1,0 +1,259 @@
+/*全体*/
+body {
+    margin: 0;
+    font-family: "sans-serif";
+}
+
+a {
+    color: rgb(63, 159, 63);
+    text-decoration: none;
+}
+
+/*ヘッダー*/
+
+header {
+    height: 45px;
+    width: 100%;
+    border-top: 2px solid #34b792;
+    border-bottom: 2px solid #34b792;
+    background-color: #FFFEF9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo {
+    float: left;
+    width: 130px;
+    padding-left: 20px;
+    padding-top: 5px;
+    
+}
+
+.header-right a {
+    float: right;
+    line-height: 35px;
+    margin: 5px 0;
+    padding:0 25px;
+    display: block;
+    transition:all 0.5s;
+    border-left: 2px dotted #34b792;
+}
+
+
+/*トップ*/
+
+
+.top-wrapper {
+    padding-top: 45px;
+    padding-bottom: 10px;
+    background-color: antiquewhite;
+    height: fit-content;
+    width:100%;
+}
+
+.main-photo {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+}
+
+.divide-photo {
+    width: 90%;
+    height: fit-content;
+    margin: 0 5%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.top-text {
+    font-family: "筑紫B丸ゴシック";
+    text-align: center;
+    padding: 0px 25px;
+    margin: 0 auto;
+    height: fit-content;
+    width: 1000px;
+    background-color: #fdfdf9;
+    border: 4px solid #a7a7aa;
+    transition: 0.8s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.top-text.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+.top-text h1 {
+    font-size: 50px;
+}
+
+.top-text p {
+    font-size: 20px;
+}
+
+
+.top-alert {
+    text-align: center;
+    margin-bottom: 300px;
+    transition: 0.8s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.top-alert.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+.top-alert h2 {
+    color: red;
+    background-color: yellow;
+    border: 1px solid black;
+    height: fit-content;
+    width: 100px;
+    padding: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.top-scenario {
+    transition: 0.8s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.top-scenario.on {
+    transform: translateY(0);
+    opacity: 1.0; 
+}
+
+.top-scenario h1 {
+    font-family: "筑紫B丸ゴシック";
+    text-align: center;
+    font-size: 50px;
+}
+
+.card-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.card-contents{
+    display: flex;
+    width: fit-content;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+.card {
+    flex-shrink: 0;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 10px 20px 40px;
+    padding: 20px;
+    text-align: center;
+    font-family: "筑紫B丸ゴシック";
+}
+
+.Arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color:white;
+    color: black;
+    border: 1px solid black;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 80;
+}
+
+.Arrow:hover {
+    background-color:gray;
+}
+
+.Arrow.left {
+    left: 5px;
+}
+
+.Arrow.right {
+    right: 5px;
+}
+
+.Hide {
+    display:none;
+}
+
+.post {
+    transition: 0.8s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.post.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+.post-contents h1 {
+    font-family: "筑紫B丸ゴシック";
+    text-align: center;
+    font-size: 50px;
+}
+
+.post-button {
+    padding-bottom: 110px;
+}
+
+.button {
+    background-color: #fdfdf9;
+    font-size: 50px;
+    display: block;
+    text-align: center;
+    width: 50%;
+    height: fit-content;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-family: "筑紫B丸ゴシック";
+    border: 2px solid black;
+}
+
+
+
+
+/*フッター*/
+footer {
+    border-top: 1px solid #34b792;
+    background-color: #FFFEF9;
+}
+
+.footer-contents {
+    text-align: center;
+}
+
+.footer-contents li {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 5px;
+    list-style: none;
+}
+
+.footer-contents li+ li {
+    border-left: 1px dotted #34b792;
+}
+
+.footer-wrapper p {
+    font-size: 15px;
+    color: gray;
+    text-align: center;
+}

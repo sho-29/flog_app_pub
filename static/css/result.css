@@ -1,0 +1,231 @@
+/*全体*/
+body {
+    margin: 0;
+    font-family: "sans-serif";
+}
+
+a {
+    color: rgb(63, 159, 63);
+    text-decoration: none;
+}
+
+/*ヘッダー*/
+
+header {
+    height: 45px;
+    width: 100%;
+    border-top: 2px solid #34b792;
+    border-bottom: 2px solid #34b792;
+    background-color: #FFFEF9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo {
+    float: left;
+    width: 130px;
+    padding-left: 20px;
+    padding-top: 5px;
+    
+}
+
+.header-right a {
+    float: right;
+    line-height: 35px;
+    margin: 5px 0;
+    padding:0 25px;
+    display: block;
+    transition:all 0.5s;
+    border-left: 2px dotted #34b792;
+}
+
+/*トップ*/
+.top {
+    padding-top: 60px;
+    background-image: url(../images/56301.png);
+    text-align: center;
+    height: fit-content;
+}
+
+.result-container {
+    padding: 0px 25px; 
+    margin: 5px 25px;
+    margin: 20px auto;
+    width: 1000px;
+    height: fit-content;
+    background-color: #fdfdf9;
+    border: 4px solid #a7a7aa;
+    border-radius: 20px;
+    font-family: "筑紫B丸ゴシック";
+}
+
+.result {
+    h3 {
+        display: inline-block;
+        text-align: center;
+        font-size: 50px;
+        border-bottom: 2px dotted red;
+        width: fit-content;
+    }
+    h4 {
+      text-align: center;
+      font-size: 30px;
+      margin-top: -20px;
+    }
+}
+
+.char-h4 {
+    width: 90%;
+}
+
+.char-1 {
+    font-size: 60px;
+}
+
+.result img {
+    display: block;
+    margin: 0 auto;
+    width: 350px;
+    height: 350px;
+}
+
+.card-text {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;  
+    border-bottom: 2px solid #34b792;  
+}
+
+.btn a {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    width: 150px;
+    color: #fff;
+    background-color: #34b792;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+
+.btn a:hover {
+    background: #2ea583;
+}
+
+.btn a:active {
+    box-shadow: 2px 2px 5px #34b792;
+}
+
+.quiz-container {
+    margin: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+.quiz-container h3 {
+    display: inline-block;
+    text-align: center;
+    font-size: 50px;
+    border-bottom: 2px dotted red;
+    width: fit-content;
+}
+
+.quiz-item {
+    margin-bottom: 20px;
+}
+
+.quiz-header {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    margin-left: 37%;
+}
+
+.quiz-toggle-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #34b792;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quiz-toggle-button:hover {
+    background-color: #2ea583;
+}
+
+.question-number {
+    margin-right: 10px;
+    font-size: 25px;
+    font-weight: 1000;
+    font-family: "筑紫B丸ゴシック";
+}
+
+.quiz-content {
+    display: none;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 2px solid #313131;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 97%;
+    text-align: left;
+}
+
+.quiz-content p {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 10px 0;
+}
+
+.quiz-content span {
+    display: block;
+    font-weight: 500;
+    font-size: large;
+    margin-left: 20px;
+}
+
+.char-10 {
+    display: block;
+    margin-top: -25px;
+    padding-left: 20%;
+}
+
+.char-11 {
+    display: block;
+    margin-top: -25px;
+    padding-left: 30%;
+}
+
+.great {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 10px 0;
+}
+
+.great span {
+    font-size: 30px;
+}
+
+.great .char-10 {
+    margin-top: -45px;
+}
+
+.great .char-11 {
+    margin-top: -45px;
+}
+
+.explain {
+    margin-top: 20px;
+    border-top:2px solid #a7a7aa;
+    line-height: 35px;
+}
+

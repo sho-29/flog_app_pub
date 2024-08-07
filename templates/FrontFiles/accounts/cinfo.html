@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+    {% block title %}登録情報の変更{% endblock %}
+    {% block css %}<link href="cinfo.css" rel="stylesheet">{% endblock %}
+  </head>
+{% block content %}
+    <div class="top-wrapper">
+        <div class="container">
+            <div class="top-text"><h2>登録情報の変更</h2></div>
+            <div class="top-username">
+                <div class="top-address">
+                    <div class="text">登録済みのメールアドレス</div>
+                    <input type="text" name="address" placeholder="メールアドレスを入力">
+                </div>
+                <div class="text">新しいユーザーネーム</div>
+                <input type="text" name="username" placeholder="ユーザーネームを入力">
+            </div>
+            <div class="top-password">
+                <div class="text">新しいパスワード</div>
+                <input type="password" name="password" placeholder="パスワードを入力">
+            </div>
+            <a href="" class="login-btn">変更を確定する</a>
+        </div>
+    </div>
+{% endblock %}

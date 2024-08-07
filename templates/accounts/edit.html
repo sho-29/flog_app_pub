@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+    {% block css %}<link href="{% static 'css/signup.css' %}" rel="stylesheet">{% endblock %}
+    {% block title %}プロフィール編集{% endblock %}
+{% block content %}
+    <div class="top-wrapper">
+      <div class="top-container">
+        <div class="top-text"><img class="logo-login" src="{% static 'images/KKFrog.png' %}"></div>
+        <div class="top-text"><h2>プロフィール編集</h2></div>
+          <form method="post" class="top-address">
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            {{ password_form.as_p }}
+            <button type="submit" class="login-btn">保存</button>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script 
+        src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
+{% endblock %}
