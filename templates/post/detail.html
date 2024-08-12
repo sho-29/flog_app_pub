@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}ツイート詳細{% endblock %}
+{% block content %}
+
+
+
+
+<h3 class="sub-title">ユーザー名<h5 class="content">{{post.user}}</h5>
+</h3>
+<h3 class="sub-title">ツイート<h5 class="content">{{post.content}}</h5>
+</h3>
+<h3 class="sub-title">投稿日時<h5 class="content">{{post.created_at}}</h5>
+</h3>
+
+
+<a href="{% url 'post:delete' post.pk %}">削除</a>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}ツイート削除{% endblock %}
+{% block content %}
+<form action="{% url 'tweets:delete' tweet.pk %}" method="post">
+    {% csrf_token %}
+    <p><input type="submit" value="削除"></p>
+</form>
+{% endblock %}
