@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1>蛙化談の投稿</h1>
+<a href="{% url 'post:create' %}">投稿</a>
+<!-- object_list は Article.objects.all() と同じ結果となる -->
+<!--Tweet.objects.all():Tweetの中身全て取り出す-->
+<!--user、ツイート内容、日時の順に表示する-->
+<!--パスでクエリパラメータ(<int:pk>とか)を指定している場合にはurlタグの遷移先の後ろに-->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.like-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const postId = this.dataset.postId;
+                fetch(`/post/${postId}/like/`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': getCookie('csrftoken'),
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    this.innerText = data.liked ? 'Unlike' : 'Like';
+                    document.querySelector(`#like-count-${postId}`).innerText = data.like_count;
+                });
+            });
+        });
+    });
+    
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    </script>
+
+{% for post in object_list %}
+    <div>
+        <p>{{post.user}}<br>
+            {{ post.content }}</p>
+
+        <button class="like-button" data-post-id="{{ post.id }}">
+            {% if user in post.like_set.all %}
+                Unlike
+            {% else %}
+                Like
+            {% endif %}
+        </button>
+        <span id="like-count-{{ post.id }}">{{ post.like_count }}</span>
+    </div>
+{% endfor %}
+{%endblock%}

@@ -18,7 +18,7 @@
             <a href="{% url 'welcome:welcome'%}" style="text-decoration: none;">ホーム</a>
             {% if user.is_authenticated %}<!--ログイン状態-->
             <a href="{% url 'accounts:user_profile' user.username %}" style="text-decoration: none;">ユーザーページ</a>
-            <!--<a href="#" style="text-decoration: none;">投稿</a>-->
+            <a href="{% url 'post:post_list'%}" style="text-decoration: none;">投稿</a>
             <a href="{% url 'accounts:logout' %}" style="text-decoration: none;">ログアウト</a>
             {% else %}
             <a href="{% url 'accounts:login'%}" style="text-decoration: none;">ログイン</a>
